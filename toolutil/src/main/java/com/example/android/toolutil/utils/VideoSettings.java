@@ -64,8 +64,8 @@ public class VideoSettings {
     }
 
     /**
-     *
-     * @return
+     *  编码
+     * @return boolean
      */
     public boolean getMediaCodecHandleResolutionChange(){
         String key = mAppContext.getString(R.string.pref_media_codec_handle_resolution_change);
@@ -90,5 +90,66 @@ public class VideoSettings {
         return mSharedPreferences.getString(key,"");
     }
 
-    
+    /**
+     *  可否没有视图
+     * @return boolean
+     */
+    public boolean getEnableNoView(){
+        String key = mAppContext.getString(R.string.pref_enable_no_view);
+        return mSharedPreferences.getBoolean(key,false);
+    }
+
+    /**
+     * 是否支持SurfaceView
+     * @return boolean
+     */
+    public boolean getEnableSurfaceView(){
+        String key = mAppContext.getString(R.string.pref_enable_surface_view);
+        return mSharedPreferences.getBoolean(key,false);
+    }
+
+    /**
+     * 是否支持 TextureView
+     * @return boolean
+     */
+    public boolean getEnableTextureView(){
+        String key = mAppContext.getString(R.string.pref_enable_texture_view);
+        return mSharedPreferences.getBoolean(key,false);
+    }
+
+    /**
+     * 能否解绑Surface Texture View
+     * @return boolean
+     */
+    public boolean getEnableDetachedSurfaceTextureView(){
+        String key = mAppContext.getString(R.string.pref_enable_detached_surface_texture);
+        return mSharedPreferences.getBoolean(key,false);
+    }
+
+    /**
+     * 是否正在使用视频数据源
+     * @return boolean
+     */
+    public boolean getUsingMediaDataSource(){
+        String key = mAppContext.getString(R.string.pref_using_mediadatasource);
+        return mSharedPreferences.getBoolean(key,false);
+    }
+
+    /**
+     *  获取最近的文件夹路径
+     * @return String
+     */
+    public String getLastDirectory(){
+        String key = mAppContext.getString(R.string.pref_key_last_directory);
+        return mSharedPreferences.getString(key,"/");
+    }
+
+    /**
+     * 设置最近的文件夹路径
+     * @param path 路径
+     */
+    public void setLastDirectory(String path){
+        String key =  mAppContext.getString(R.string.pref_key_last_directory);
+        mSharedPreferences.edit().putString(key,path).apply();
+    }
 }
