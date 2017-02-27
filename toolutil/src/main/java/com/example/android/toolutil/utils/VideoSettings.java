@@ -152,4 +152,5 @@ public class VideoSettings {
         String key =  mAppContext.getString(R.string.pref_key_last_directory);
         mSharedPreferences.edit().putString(key,path).apply();
     }
+
 }
