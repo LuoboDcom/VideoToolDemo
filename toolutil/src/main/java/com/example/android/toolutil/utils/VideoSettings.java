@@ -90,5 +90,5 @@ public class VideoSettings {
         return mSharedPreferences.getString(key,"");
     }
 
-    
+
 }
