@@ -1,1 +1,1 @@
-include ':app', ':toolutil'
+include ':app', ':toolutil', ':videopushdemo'
